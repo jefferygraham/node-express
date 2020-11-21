@@ -32,14 +32,16 @@ campsiteRouter
     next();
   })
   .get((req, res) => {
-    res.end(`Will get the campsite: ${req.params.campsiteId}`);
+    res.end(`Will send the campsite: ${req.params.campsiteId} to you`);
   })
   .post((req, res) => {
-    res.end(`Will add the campsite: ${req.params.campsiteId}`);
+    res.end(
+      `Will add the campsite ${req.params.campsiteId}: ${req.body.name} with description: ${req.body.description}`
+    );
   })
   .put((req, res) => {
     res.end(
-      `Will update the campsite: ${req.params.campsiteId} - ${req.body.name} with description: ${req.body.description}`
+      `Will update the campsite ${req.params.campsiteId}: ${req.body.name} with description: ${req.body.description}`
     );
   })
   .delete((req, res) => {
